@@ -13,7 +13,7 @@ Redis 2.6.12 or higher, because:
 
 ```ruby
 require 'redis'
-requie 'redis_exp_lock'
+require 'redis_exp_lock'
 
 redis = Redis.new
 
