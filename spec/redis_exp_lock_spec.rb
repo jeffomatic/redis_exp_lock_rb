@@ -131,7 +131,7 @@ describe RedisExpLock do
 
       attempts = 0
       expect { attempts = retry_lock.lock }.not_to raise_error
-      expect(attempts).to be > 0
+      expect(attempts).to be > 1
     end
 
   end
