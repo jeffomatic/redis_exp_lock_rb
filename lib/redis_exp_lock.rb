@@ -58,9 +58,7 @@ class RedisExpLock
     raise AlreadyAcquiredLockError if locked?
 
     uuid = SecureRandom.uuid
-    set_opts = {
-      :nx => true
-    }
+    set_opts = {:nx => true}
     set_opts[:px] = Integer(@expiry * 1000) if @expiry
 
     if @redis.set(@lock_key, uuid, set_opts)
